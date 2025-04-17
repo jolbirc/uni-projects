@@ -34,13 +34,14 @@ public class Minesweeper
         GridLayout mineLayout = new GridLayout(height, width);
         minePanel = new JPanel();
         minePanel.setLayout(mineLayout);
-        setupMineButtonListener();
+        setupMineButtonListener();    // mine button listener must be created before the buttons
 
         for (int i = 0; i < (width * height); i++)
         {
             JButton mineButton = new JButton(" ");
             mineButton.addActionListener(mineButtonListener);
             mineButton.setActionCommand(String.valueOf(i));
+            minePanel.add(mineButton);
         }
     }
 
