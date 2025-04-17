@@ -3,7 +3,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 public class Minesweeper {
     private JPanel rootPanel;
@@ -147,6 +149,45 @@ public class Minesweeper {
             }
         }
 
-        // check each of any given cells neighbours to private count of adjacent mines
+        // check each of any given cells neighbours to provide count of adjacent mines
+        private Set<Coordinate> validNeighbour(Coordinate coordinate) {
+            Set<Coordinate> neighbours = new HashSet<Coordinate>();
+
+            final int minX = Math.max(0, coordinate.getX() - 1);
+            final int maxX = Math.min(width - 1, coordinate.getX() + 1);
+            final int minY = Math.max(0, coordinate.getY() - 1);
+            final int maxY = Math.min(height - 1, coordinate.getY() + 1);
+
+            for (int y = 0; y <= maxY; y++) {
+                for (int x = 0; x <= maxX; x++) {
+                    neighbours.add(new Coordinate(x, y));
+                }
+            }
+
+            return neighbours;
+        }
+
+        // count total number mines in array
+        private int countMinesAtPoints(Set<Coordinate> points) {
+            int count = 0;
+            for (Coordinate point : points) {
+                if (field[point.getY()][point.getX()].isMine()) {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        // populate adject mine count of each MineInfo
+        private void populateAdjacentMineCount() {
+            for (int y = 0; y < field.length; y++) {
+                for (int x = 0; x < field[y].length; x++) {
+                    final Set<Coordinate> neighbours = validNeighbour(new Coordinate(x, y));
+                    field[y][x].setAdjacentMineCount(countMinesAtPoints(neighbours));
+                }
+            }
+        }
+
+        // check mine location with click
     }
 }
