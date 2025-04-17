@@ -3,9 +3,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MinesweeperUI
+public class Minesweeper
 {
-    private JPanel panel1;
+    private JPanel rootPanel;
     private JButton restartButton;
     private JLabel minesRemaining;
     private JPanel minePanel;
@@ -14,6 +14,19 @@ public class MinesweeperUI
     private final int height = 5;
     private ActionListener mineButtonListener;
 
+    public static void main(String[] args)
+    {
+        Minesweeper minesweeper = new Minesweeper();
+    }
+
+    public Minesweeper()
+    {
+        JFrame frame = new JFrame("Minesweeper!");
+        frame.setContentPane(rootPanel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();    // fit to size of window
+        frame.setVisible(true);
+    }
 
     private void createUIComponents()
     {
