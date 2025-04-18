@@ -33,6 +33,14 @@ public class Minesweeper {
         frame.pack();    // fit to size of window
         frame.setVisible(true);
 
+        restartButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                resetButton();
+            }
+        });
+
+
     }
 
     private void createUIComponents() {
@@ -70,6 +78,16 @@ public class Minesweeper {
         };
     }
 
+    private void resetButton() {
+        mineField = new MineField(width, height);
+        for (Component possibleButton : minePanel.getComponents()) {
+            if (possibleButton instanceof JButton) {
+                JButton actualButton = (JButton)possibleButton;
+                actualButton.setText(" ");
+            }
+        }
+    }
+    
     static class Coordinate {
         private int x, y;
 
