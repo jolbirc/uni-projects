@@ -12,21 +12,27 @@ public class Minesweeper {
     private JButton restartButton;
     private JLabel minesRemaining;
     private JPanel minePanel;
-
-    private final int width = 7;
-    private final int height = 5;
     private ActionListener mineButtonListener;
 
+    private static final int width = 7;
+    private static final int height = 5;
+    private MineField mineField;
+
+
+
     public static void main(String[] args) {
-        Minesweeper minesweeper = new Minesweeper();
+        new Minesweeper();
     }
 
     public Minesweeper() {
+        mineField = new MineField(width, height);
+
         JFrame frame = new JFrame("Minesweeper!");
         frame.setContentPane(rootPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();    // fit to size of window
         frame.setVisible(true);
+
     }
 
     private void createUIComponents() {
@@ -50,12 +56,21 @@ public class Minesweeper {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Button " + e.getActionCommand() + " pressed");
-                // TODO: determine position of mine in grid and handle
+                // TODO: determine position of mine in grid and
+                int mineId = Integer.parseInt(e.getActionCommand());
+                Coordinate coordinate = mineField.pointForId(mineId);
+                MineInfo info = mineField.checkMine(coordinate);
+                JButton button = (JButton) e.getSource();
+                if (info.isMine()) {
+                    explodeAllMines();
+                } else {
+                    button.setText(String.valueOf(info.getAdjacentMineCount()));
+                }
             }
         };
     }
 
-    class Coordinate {
+    static class Coordinate {
         private int x, y;
 
         Coordinate(int x, int y) {
@@ -73,15 +88,15 @@ public class Minesweeper {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj instanceof Point) {
-                Point otherPoint = (Point) obj;
+            if (obj instanceof Coordinate) {
+                Coordinate otherPoint = (Coordinate) obj;
                 return this.x == otherPoint.x && this.y == otherPoint.y;
             }
             return false;
         }
     }
 
-    public class MineInfo {
+    public static class MineInfo {
         private boolean isMine = false;
         private int adjacentMineCount = 0;
 
@@ -102,7 +117,22 @@ public class Minesweeper {
         }
     }
 
-    public class MineField {
+    // iterate through all jbuttons and change to asterisk if mine
+    private void explodeAllMines() {
+        for (Component component : minePanel.getComponents()) {
+            if (component instanceof JButton) {
+                JButton button = (JButton) component;
+                int mineId = Integer.parseInt(button.getActionCommand());
+                Coordinate coordinate = mineField.pointForId(mineId);
+                MineInfo info = mineField.checkMine(coordinate);
+                if (info.isMine()) {
+                    button.setText("*");
+                }
+            }
+        }
+    }
+
+    public static class MineField {
 
         private boolean started = false;
         private int mineCount;
@@ -188,6 +218,26 @@ public class Minesweeper {
             }
         }
 
+        MineInfo checkMine(Coordinate coordinate) {
+            if (!started) {
+                started = true;
+                populateMines(mineCount, coordinate);
+                populateAdjacentMineCount();
+            }
+            MineInfo location = field[coordinate.getY()][coordinate.getX()];
+            MineInfo mineInfo = new MineInfo();
+            mineInfo.setAdjacentMineCount(location.getAdjacentMineCount());
+            mineInfo.setMine(location.isMine());
+            return mineInfo;
+        }
+
         // check mine location with click
+        public Coordinate pointForId(int mineId) {
+            int x = mineId % width;
+            int y = mineId / width;
+            return new Coordinate(x, y);
+        }
+
+
     }
 }
