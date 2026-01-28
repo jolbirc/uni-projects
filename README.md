@@ -11,29 +11,29 @@
 ---
 ## STACK
 ### Frontend
-- **HTML5** and **CSS3**: Markup and styling.
-- **JS**: Client side interactivity.
-- **Razor Pages**: ASP.NET engine for dynamic rendering.
+- **HTML5** and **CSS3** - Markup and styling.
+- **JS** - Client side interactivity.
+- **Razor Pages** -  ASP.NET engine for dynamic rendering.
 
 ### Backend
 - **ASP.NET Core**
-- **C#**: Server side.
-- **SQL Database**: Data persistence.
+- **C#** - Server side.
+- **SQL Database** - Data persistence.
 
 ### Dev Tools
-- **JetBrains WebStorm/Rider**: Primary IDE's.
-- **Git with GitHub**: VC system.
+- **JetBrains WebStorm/Rider** - Primary IDE's.
+- **Git with GitHub** - VC system.
 
 ### Deploy Tools
-- **cPanel Linux Server**: Site hosting.
-- **FTP with a CI/CD Pipeline**: Automated deployment via GitHub. 
+- **cPanel Linux Server** - Site hosting.
+- **FTP with a CI/CD Pipeline** - Automated deployment via GitHub. 
 
 ### Third Party Services
-- **Google Maps API**: Location display on contact page (maybe).
-- **MS Co-Pilot**: AI-Gen images (referenced in APA 7 format).
+- **Google Maps API** - Location display on contact page (maybe).
+- **MS Co-Pilot** - AI-Gen images (referenced in APA 7 format).
 
 ### Testing & Validation
-- **W3C HTML and CSS Validators**: For standards compliance
+- **W3C HTML and CSS Validators** - For standards compliance
 - **WCAG Accessibility Assesment** 
 ---
 ## STRUCTURE
