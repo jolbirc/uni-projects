@@ -15,7 +15,6 @@
                 <img src="img/icons/logo.svg" alt="StaySpace Logo">
             </div>
             <ul class="nav-links">
-                <!-- Working links to all pages, sitewide -->
                 <li><a href="index.html">Home</a></li>
                 <li><a href="details.html">Details</a></li>
                 <li><a href="contact.html">Book</a></li>
@@ -25,7 +24,10 @@
             </div>
         </nav>
     </header>
+
+    <!-- Booking request form including validation -->
     <form id="booking-form" method="POST">
+      <!-- Personal contact info -->
       <fieldset>
         <legend>Your Information</legend>
 
@@ -39,6 +41,7 @@
         <input type="tel" id="phone" name="phone" required>
       </fieldset>
 
+      <!-- Dates and room selector -->
       <fieldset>
         <legend>Booking Details</legend>
 
