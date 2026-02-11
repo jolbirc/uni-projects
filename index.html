@@ -1,76 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- 
+  Design choices:
+    - No opener, no referrer (https://stackoverflow.com/questions/57628890/why-people-use-rel-noopener-noreferrer-instead-of-just-rel-noreferrer)
+
+  Accessibility considerations:
+    - Consistently positioned skip navigation control (https://www.w3.org/WAI/WCAG22/Understanding/consistent-navigation.html)
+    - Aria labels (https://www.w3docs.com/snippets/html/what-is-aria-label-and-how-to-use-it.html)
+-->
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>HOME | STAYSPACE</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>HOME | STAYSPACE</title>
 </head>
 
 <body>
-  <!-- Site wide nav, logo, main menu, Airbnb integration -->
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="img/icons/logo.svg" alt="StaySpace Logo">
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="details.html">Details</a></li>
-                <li><a href="contact.html">Book</a></li>
-            </ul>
-            <div class="airbnb-logo">
-                <a href="https://airbnb.com" target="_blank"><img src="img/icons/Airbnb-Logo-2014-718276488.png" alt="Airbnb Logo" style="max-width: 100px"></a>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Landing page hero img-->
-    <section class="hero">
-        <div class="hero-content">
-            <p class="welcome-text">Welcome to</p>
-            <img src="/img/icons/TRANQUILITY BASE.svg" alt="TRANQUILITY BASE">
+  <!-- SITEWIDE HEADER/NAV -->
+  <a class="skip-link" href="#main">Skip to Main Content</a>
+  <header class="site-header">
+    <div class="container">
+      <nav aria-label="Primary navigation">
+        
+        <div class="logo">
+          <img src="/img/icons/logo.svg" alt="StaySpace Logo">
         </div>
-        <div class="hero-image">
-            <!-- TODO: background images here -->
-        </div>
-    </section>
 
-    <!-- Key ameneties and "showcase" -->
-    <section class="amenities">
-        <h2>Amenities</h2>
-        <div class="amenities-grid">
-            <div class="amenity-item">
-                <div class="amenity-icon">
-                    <!-- TODO: add icons once rest of skeleton styling built -->
-                </div>
-                <p>Purpose built VR room, bringing the stars to you!</p>
-            </div>
-            <div class="amenity-item">
-                <div class="amenity-icon">
-                    <!-- TODO: add icons once rest of skeleton styling built -->
-                </div>
-                <p>Immersive interstellar sci-fi decor throughout.</p>
-            </div>
-            <div class="amenity-item">
-                <div class="amenity-icon">
-                    <!-- TODO: add icons once rest of skeleton styling built -->
-                </div>
-                <p>High-end simulators and gaming rigs.</p>
-            </div>
-        </div>
-    </section>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="details.html">Details</a></li>
+          <li><a href="contact.html">Book</a></li>
+        </ul>
 
-    <!-- Quick enquiry/extra link to booking page -->
-    <section class="contact">
-        <h2>Request an booking form</h2>
-        <form>
-            <input type="text" placeholder="Name">
-            <input type="email" placeholder="Email">
-            <button type="submit">Request Form</button>
-        </form>
-        <a href="contact.html">... or book directly here!</a>
-    </section>
+        <div class="airbnb-logo">
+          <a href="https://airbnb.com" target="_blank" rel="noopener noreferrer">
+            <img src="/img/icons/Airbnb-Logo-2014-718276488.png" alt="Airbnb Logo">
+          </a>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- LANDING PAGE HERO IMG -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="welcome-text">Welcome to</p>
+      <img src="/img/icons/TRANQUILITY BASE.svg" alt="TRANQUILITY BASE">
+    </div>
+    <div class="hero-image">
+      <!-- TODO: background images here -->
+    </div>
+  </section>
+
+  <!-- KEY AMENITIES -->
+  <section class="amenities">
+    <h2>Amenities</h2>
+    <div class="amenities-grid">
+      <div class="amenity-item">
+        <div class="amenity-icon">
+          <!-- TODO: add icons once rest of skeleton styling built -->
+        </div>
+        <p>Purpose built VR room, bringing the stars to you!</p>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon">
+          <!-- TODO: add icons once rest of skeleton styling built -->
+        </div>
+        <p>Immersive interstellar sci-fi decor throughout.</p>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon">
+          <!-- TODO: add icons once rest of skeleton styling built -->
+        </div>
+        <p>High-end simulators and gaming rigs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK ENQUIRY -->
+  <section class="contact">
+    <h2>Request an booking form</h2>
+    <form>
+      <input type="text" placeholder="Name">
+      <input type="email" placeholder="Email">
+      <button type="submit">Request Form</button>
+    </form>
+    <a href="contact.html">... or book directly here!</a>
+  </section>
 </body>
 </html>

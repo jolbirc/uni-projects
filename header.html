@@ -1,0 +1,33 @@
+<!-- SITEWIDE HEADER/NAV -->
+
+<!-- 
+Design choices:
+- No opener, no referrer (https://stackoverflow.com/questions/57628890/why-people-use-rel-noopener-noreferrer-instead-of-just-rel-noreferrer)
+
+Accessibility considerations:
+- Consistently positioned skip navigation control (https://www.w3.org/WAI/WCAG22/Understanding/consistent-navigation.html)
+- Aria labels (https://www.w3docs.com/snippets/html/what-is-aria-label-and-how-to-use-it.html)
+-->
+<a class="skip-link" href="#main">Skip to Main Content</a>
+
+<header class="site-header">
+  <div class="container">
+    <nav aria-label="Primary navigation">
+        <div class="logo">
+          <img src="/img/icons/logo.svg" alt="StaySpace Logo">
+        </div>
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="details.html">Details</a></li>
+          <li><a href="contact.html">Book</a></li>
+        </ul>
+
+        <div class="airbnb-logo">
+          <a href="https://airbnb.com" target="_blank" rel="noopener noreferrer">
+            <img src="/img/icons/Airbnb-Logo-2014-718276488.png" alt="Airbnb Logo">
+          </a>
+        </div>
+    </nav>
+  </div>
+</header>

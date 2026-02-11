@@ -46,6 +46,12 @@ button {
   font-family: inherit;
 }
 
+.airbnb-logo {
+  max-width: 100px;
+  width: 100%;
+  height: auto;
+}
+
 
 /* RESPONSIVE DESIGN */
 

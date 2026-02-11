@@ -9,22 +9,31 @@
 </head>
 
 <body>
-  <!-- Site wide nav, logo, main menu, Airbnb integration -->
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="img/icons/logo.svg" alt="StaySpace Logo">
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="details.html">Details</a></li>
-                <li><a href="contact.html">Book</a></li>
-            </ul>
-            <div class="airbnb-logo">
-                <a href="https://airbnb.com" target="_blank"><img src="img/icons/Airbnb-Logo-2014-718276488.png" alt="Airbnb Logo" style="max-width: 100px"></a>
-            </div>
-        </nav>
-    </header>
+  <!-- SITEWIDE HEADER/NAV -->
+  <a class="skip-link" href="#main">Skip to Main Content</a>
+  <header class="site-header">
+    <div class="container">
+      <nav aria-label="Primary navigation">
+        
+        <div class="logo">
+          <img src="/img/icons/logo.svg" alt="StaySpace Logo">
+        </div>
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="details.html">Details</a></li>
+          <li><a href="contact.html">Book</a></li>
+        </ul>
+
+        <div class="airbnb-logo">
+          <a href="https://airbnb.com" target="_blank" rel="noopener noreferrer">
+            <img src="/img/icons/Airbnb-Logo-2014-718276488.png" alt="Airbnb Logo">
+          </a>
+        </div>
+
+      </nav>
+    </div>
+  </header>
 
     <!-- Booking request form including validation -->
     <form id="booking-form" method="POST">
