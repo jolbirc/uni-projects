@@ -1,10 +1,12 @@
 /* Global */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: white; /* TEMP */
 }
 
 html {
@@ -14,6 +16,32 @@ html {
 
 body {
   font-family: 'JetBrains Mono', monospace;
+  line-height: 2;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: black; /* TEMP */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 /* Responsive breakpoints retrieved from: https://www.browserstack.com/guide/responsive-design-breakpoints */
