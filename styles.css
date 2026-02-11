@@ -1,4 +1,4 @@
-/* Global */
+/* GLOBAL */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
 
@@ -6,7 +6,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: white; /* TEMP */
 }
 
 html {
@@ -20,6 +19,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   background-color: black; /* TEMP */
+  color: white; /* TEMP */
 }
 
 img {
@@ -28,7 +28,9 @@ img {
   display: block;
 }
 
-ul {
+ul, ol {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -44,4 +46,78 @@ button {
   font-family: inherit;
 }
 
-/* Responsive breakpoints retrieved from: https://www.browserstack.com/guide/responsive-design-breakpoints */
+
+/* RESPONSIVE DESIGN */
+
+/* Responsive breakpoints retrieved from: https://www.browserstack.com/guide/responsive-design-breakpoints
+All design choices made in line with info retrieved from: https://developer.mozilla.org/en-US/docs/Glossary/Mobile_First
+
+Responsive design choices and references:
+- Padding block (Info retrieved from https://www.w3schools.com/CSSref/css_pr_padding-block.php)
+
+Accessibility considerations and references:
+- Reduced motion (Retrieved from https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion)
+*/
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+    transition: none;
+    animation: none;
+  }
+}
+
+:root {
+  /* Default for smallest screens, 0-480 */
+  --container-padding: 16px; 
+  --container-max-width: 100%;
+  --section-padding: 24px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding)
+}
+
+.section {
+  padding-block: var(--section-padding);
+}
+
+header {
+  padding-block: 12px
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Screen width 481-768, as per references guidelines */
+@media (min-width: 481px) {
+  :root {
+    --container-padding: 20px;
+    --section-padding: 32px;
+    --container-max-width: 768px;
+  }
+}
+
+/* Screen width 769-1279, as per referenced guidelines */
+@media (min-width: 769px) {
+  :root {
+    --container-padding: 24px;
+    --section-padding: 48px;
+    --container-max-width: 1120px;
+  }
+}
+
+/* Screen width 1280+, as per referenced guidelines */
+@media (min-width: 1280px) {
+  :root {
+    --container-padding: 32px;
+    --container-max-width: 1200px;
+  }
+}
