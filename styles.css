@@ -1,4 +1,25 @@
-/* GLOBAL */
+/* 
+General references:
+- Set attributes for docs root element (https://www.w3schools.com/cssref/sel_root.php)
+- Positioning (https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Positioning)
+- Units used in resizing retrieved from: https://www.sitepoint.com/css-viewport-units-quick-start/
+- Clamp value within range for (https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp)
+
+Responsive design choices and references:
+- Responsive breakpoints retrieved from: https://www.browserstack.com/guide/responsive-design-breakpoints
+- All design choices made in line with info retrieved from: https://developer.mozilla.org/en-US/docs/Glossary/Mobile_First
+- Padding block (Info retrieved from https://www.w3schools.com/CSSref/css_pr_padding-block.php)
+
+Accessibility considerations and references:
+- Reduced motion (Retrieved from https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion)
+- Skip to content button (https://www.accessibilitychecker.org/wcag-guides/ensure-all-skip-links-have-a-focusable-target/)
+*/
+
+
+/* 
+=== GLOBAL ===
+*/
+/* Custom fonts */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
 
@@ -14,12 +35,13 @@ html {
 }
 
 body {
+  margin: 0;
   font-family: 'JetBrains Mono', monospace;
   line-height: 2;
   width: 100%;
   overflow-x: hidden;
-  background-color: black; /* TEMP */
-  color: white; /* TEMP */
+  background-color: #000000; 
+  color: #ffffff; 
 }
 
 img {
@@ -46,38 +68,30 @@ button {
   font-family: inherit;
 }
 
-.airbnb-logo {
-  max-width: 100px;
-  width: 100%;
-  height: auto;
+/* Skip content button */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  padding: 10px;
+  background: #ffffff;
+  color: #000000;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0)
 }
 
 
-/* RESPONSIVE DESIGN */
-
-/* Responsive breakpoints retrieved from: https://www.browserstack.com/guide/responsive-design-breakpoints
-All design choices made in line with info retrieved from: https://developer.mozilla.org/en-US/docs/Glossary/Mobile_First
-
-Responsive design choices and references:
-- Padding block (Info retrieved from https://www.w3schools.com/CSSref/css_pr_padding-block.php)
-
-Accessibility considerations and references:
-- Reduced motion (Retrieved from https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion)
+/*
+=== BASE ===
 */
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-    transition: none;
-    animation: none;
-  }
-}
-
 :root {
   /* Default for smallest screens, 0-480 */
   --container-padding: 16px; 
   --container-max-width: 100%;
-  --section-padding: 24px;
+  --section-padding: 28px;
 }
 
 .container {
@@ -88,9 +102,24 @@ Accessibility considerations and references:
 }
 
 .section {
+  position: relative;
   padding-block: var(--section-padding);
+  width: 100%;
 }
 
+.section-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  opacity: 0.5;
+}
+
+/* 
+=== HEADER/NAV ===
+*/
 header {
   padding-block: 12px
 }
@@ -100,6 +129,47 @@ nav {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+}
+
+.airbnb-logo {
+  max-width: 100px;
+  width: 100%;
+  height: auto;
+}
+
+/*
+=== HERO ===
+*/
+.hero {
+  min-height: 55vh;
+}
+
+.hero-content {
+  padding: 12px;
+}
+
+.welcome-text {
+  margin: 0 0 10px 0;
+  font-size: clamp(1.4rem, 3.5vw, 3rem);
+  letter-spacing: 0.8rem;
+}
+
+.hero-title {
+  width: min(520px, 90vw)
+}
+
+/* 
+=== RESPONSIVE DESIGN ===
+*/
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+    transition: none;
+    animation: none;
+  }
+}
+.section {
+  padding-block: var(--section-padding);
 }
 
 /* Screen width 481-768, as per references guidelines */
