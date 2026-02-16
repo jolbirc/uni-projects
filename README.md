@@ -21,7 +21,7 @@
 - **SQL Database** - Data persistence.
 
 ### Dev Tools
-- **JetBrains WebStorm/Rider** - Primary IDE's.
+- **VS Code, JetBrains Rider** - Primary IDE's.
 - **Git with GitHub** - VC system.
 
 ### Deploy Tools
