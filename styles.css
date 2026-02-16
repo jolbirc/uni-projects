@@ -16,8 +16,8 @@ Accessibility considerations and references:
 - Skip to content button (https://www.accessibilitychecker.org/wcag-guides/ensure-all-skip-links-have-a-focusable-target/)
 */
 
+
 /* === GLOBAL === */
-/* Custom fonts */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
 
@@ -81,6 +81,7 @@ button {
   transform: translateY(0)
 }
 
+
 /* === MAIN CONTENT === */
 :root {
   /* Global vars; sizes default for smallest screens (0-480) */
@@ -118,6 +119,7 @@ button {
   font-size: clamp(1.5rem, 3vw, 2.4rem);
   letter-spacing: 0.3rem;
 }
+
 
 /* === NAV === */
 header {
@@ -164,7 +166,8 @@ nav {
   height: auto;
 }
 
-/* === HERO === */
+
+/* === HERO (INDEX) === */
 .hero {
   min-height: 55vh;
 }
@@ -180,7 +183,29 @@ nav {
 }
 
 .hero-title {
-  width: min(520px, 90vw)
+  width: min(520px, 90vw);
+}
+
+
+/* === AMENITIES (INDEX) === */
+.amenities-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 0 100px;
+}
+
+.amenity-item {
+  background:#0000003a;
+  border-radius: 20px;
+  padding: 16px;
+  text-align: center;
+}
+
+.amenity-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 10px auto;
 }
 
 /* === RESPONSIVE DESIGN === */
@@ -210,6 +235,12 @@ nav {
     --container-padding: 24px;
     --section-padding: 48px;
     --container-max-width: 1120px;
+  }
+
+  .amenities-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 75px;
+    margin: 25px 75px;
   }
 }
 
