@@ -4,6 +4,7 @@ General references:
 - Positioning (https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Positioning)
 - Units used in resizing retrieved from: https://www.sitepoint.com/css-viewport-units-quick-start/
 - Clamp value within range for (https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp)
+- Sticky navbar https://www.w3schools.com/howto/howto_js_navbar_sticky.asp
 
 Responsive design choices and references:
 - Responsive breakpoints retrieved from: https://www.browserstack.com/guide/responsive-design-breakpoints
@@ -88,7 +89,7 @@ button {
 === BASE ===
 */
 :root {
-  /* Default for smallest screens, 0-480 */
+  /* Global vars; sizes default for smallest screens (0-480) */
   --container-padding: 16px; 
   --container-max-width: 100%;
   --section-padding: 28px;
@@ -121,7 +122,12 @@ button {
 === HEADER/NAV ===
 */
 header {
-  padding-block: 12px
+  padding-block: 12px;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  z-index: 100;
+  background: #000;
 }
 
 nav {
@@ -129,6 +135,28 @@ nav {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+}
+
+.site-header {
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.branding-logo {
+  max-height: 32px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
 }
 
 .airbnb-logo {
@@ -151,7 +179,7 @@ nav {
 .welcome-text {
   margin: 0 0 10px 0;
   font-size: clamp(1.4rem, 3.5vw, 3rem);
-  letter-spacing: 0.8rem;
+  letter-spacing: 0.6rem;
 }
 
 .hero-title {
