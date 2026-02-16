@@ -83,13 +83,29 @@
     <!-- QUICK ENQUIRY -->
     <section class="contact section">
       <img class="section-bg" src="/img/theme/index-2.png" alt="">
-      <h2 class="section-title">REQUEST AN BOOKING FORM</h2>
-      <form>
-        <input type="text" placeholder="Name">
-        <input type="email" placeholder="Email">
-        <button type="submit">Request Form</button>
-      </form>
-      <a href="contact.html">... or book directly here!</a>
+      <div class="container contact-inner">
+        <div class="contact-panel">
+          <h2 class="section-title">REQUEST AN BOOKING FORM</h2>
+          <form class="contact-form">
+            <label class="field">
+              <span class="field-label">Name</span>
+              <input class="field-input" type="text" placeholder="John Smith" required>
+            </label>
+            <label class="field">
+              <span class="field-label">Email</span>
+              <input class="field-input" type="email" placeholder="example@email.co.uk" required>
+            </label>          
+            <label class="field">
+              <span class="field-label">Contact Number</span>
+              <input class="field-input" type="tel" placeholder="0123456789">
+            </label>
+            <button class="btn" type="submit">Request Form</button>
+          </form>
+          <div class="contact-form-link-wrapper">
+            <a class="contact-form-link" href="contact.html">Book directly by clicking here -></a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 </body>

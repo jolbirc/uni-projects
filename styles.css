@@ -120,6 +120,14 @@ button {
   letter-spacing: 0.3rem;
 }
 
+.btn {
+  color: #ffffff;
+  padding: 12px 14px;
+  border: 1px solid #f4f4f4;
+  background: #0000003a;
+  cursor: pointer;
+}
+
 
 /* === NAV === */
 header {
@@ -208,6 +216,58 @@ nav {
   margin: 0 auto 10px auto;
 }
 
+
+/* === CONTACT (INDEX) === */
+.contact-inner {
+  display: grid;
+  justify-items: stretch;
+}
+
+.contact-panel {
+  background: #0000003a;
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+.contact-form {
+  display: grid;
+  gap: 20px;
+}
+
+.field-label {
+  display: block;
+  opacity: 0.8;
+}
+
+.field-input {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  color: #ffffff;
+  border: 0;
+  border-bottom: 1px solid white;
+}
+
+.field-input:focus-visible {
+  outline: none;
+}
+
+.contact-form .btn {
+  width: 50%;
+  margin-inline: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+.contact-form-link-wrapper {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
 /* === RESPONSIVE DESIGN === */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -241,6 +301,10 @@ nav {
     grid-template-columns: repeat(3, 1fr);
     gap: 75px;
     margin: 25px 75px;
+  }
+
+  .contact-inner {
+    justify-items: end;
   }
 }
 
