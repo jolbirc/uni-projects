@@ -34,42 +34,51 @@
   
   <main id="main">
     <!--BOOKING REQUEST FORM -->
-    <form id="booking-form" method="POST">
-      <fieldset>
-        <legend>Your Information</legend>
+    <section class="contact section">
+      <div class="container contact-inner">
+        <div class="contact-panel">
+          <h2 class="section-title">BOOK YOUR STAY TODAY</h2>
+          <form id="booking-form" method="POST">
+            <fieldset>
+              <legend>Your Information</legend>
 
-        <label for="forename">Forename:</label>
-        <input type="text" id="forename" name="forename" required>
+              <label class="field-label" for="forename">Forename:</label>
+              <input class="field-input" type="text" id="forename" name="forename" required>
 
-        <label for="surname">Surname:</label>
-        <input type="text" id="surname" name="forename" required>
+              <label class="field-label" for="surname">Surname:</label>
+              <input class="field-input" type="text" id="surname" name="forename" required>
 
-        <label for="phone">Contact Number:</label>
-        <input type="tel" id="phone" name="phone" required>
-      </fieldset>
+              <label class="field-label" for="phone">Contact Number:</label>
+              <input class="field-input" type="tel" id="phone" name="phone" required>
+            </fieldset>
+            <br>
+            <fieldset>
+              <legend>Booking Details</legend>
 
-      <fieldset>
-        <legend>Booking Details</legend>
+              <label class="field-label" for="check-in">Check-in Date:</label>
+              <input type="date" id="check-in" name="check-in" required>
 
-        <label for="check-in">Check-in Date:</label>
-        <input type="date" id="check-in" name="check-in" required>
+              <label class="field-label" for="check-out">Check-out Date:</label>
+              <input type="date" id="check-out" name="check-out" required>
 
-        <label for="check-out">Check-out Date:</label>
-        <input type="date" id="check-out" name="check-out" required>
-
-        <label for="room-choice">Room Type:</label>
-        <select name="room-choice" id="room-choice" required>
-          <option value="">Select:</option>
-          <option value="single">Single Room</option>
-          <option value="double">Double Room</option>
-          <option value="party">Party Suite (up to 8 guests)</option>
-          <option value="family">Family Suite</option>
-        </select>
-
-        <button type="submit">Request Your Booking!</button>
-        <button type="reset">Clear Form</button>
-      </fieldset>
-    </form>
+              <label class="field-label" for="room-choice">Room Type:</label>
+              <select name="room-choice" id="room-choice" required>
+                <option value="">Select:</option>
+                <option value="single">Single Room</option>
+                <option value="double">Double Room</option>
+                <option value="party">Party Suite (up to 8 guests)</option>
+                <option value="family">Family Suite</option>
+              </select>
+              <div class="contact-form-link-wrapper">
+                <button class="btn" type="submit">Request Your Booking!</button>
+                <button type="reset">Clear Form</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </section>
+    
   </main>
 </body>
 </html>

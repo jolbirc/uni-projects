@@ -240,7 +240,6 @@ nav {
 
 .field-label {
   display: block;
-  opacity: 0.8;
 }
 
 .field-input {
@@ -274,6 +273,7 @@ nav {
 .screen-reader-only {
   display: none;
 }
+
 
 /* === RESPONSIVE DESIGN === */
 @media (prefers-reduced-motion: reduce) {
