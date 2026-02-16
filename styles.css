@@ -98,12 +98,17 @@ button {
 }
 
 .section {
-  position: relative;
-  padding-block: var(--section-padding);
-  width: 100%;
+  background-image: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  max-width: 1280px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 100px 0;
 }
 
-.section-bg {
+/* .section-bg {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -111,6 +116,18 @@ button {
   object-fit: cover;
   z-index: -2;
   opacity: 0.5;
+} */
+
+.section.hero {
+  background-image: url(/img/theme/hero-1.png)
+}
+
+.section.amenities {
+  background-image: url(/img/theme/index-1.png)
+}
+
+.section.contact {
+  background-image: url(img/theme/index-2.png);
 }
 
 .section-title {
@@ -282,9 +299,6 @@ nav {
     transition: none;
     animation: none;
   }
-}
-.section {
-  padding-block: var(--section-padding);
 }
 
 /* Screen width 481-768, as per references guidelines */
