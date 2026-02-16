@@ -16,10 +16,7 @@ Accessibility considerations and references:
 - Skip to content button (https://www.accessibilitychecker.org/wcag-guides/ensure-all-skip-links-have-a-focusable-target/)
 */
 
-
-/* 
-=== GLOBAL ===
-*/
+/* === GLOBAL === */
 /* Custom fonts */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
@@ -84,10 +81,7 @@ button {
   transform: translateY(0)
 }
 
-
-/*
-=== BASE ===
-*/
+/* === MAIN CONTENT === */
 :root {
   /* Global vars; sizes default for smallest screens (0-480) */
   --container-padding: 16px; 
@@ -118,9 +112,14 @@ button {
   opacity: 0.5;
 }
 
-/* 
-=== HEADER/NAV ===
-*/
+.section-title {
+  margin: 0 0 18px 0;
+  text-align: center;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  letter-spacing: 0.3rem;
+}
+
+/* === NAV === */
 header {
   padding-block: 12px;
   position: sticky;
@@ -165,9 +164,7 @@ nav {
   height: auto;
 }
 
-/*
-=== HERO ===
-*/
+/* === HERO === */
 .hero {
   min-height: 55vh;
 }
@@ -179,16 +176,14 @@ nav {
 .welcome-text {
   margin: 0 0 10px 0;
   font-size: clamp(1.4rem, 3.5vw, 3rem);
-  letter-spacing: 0.6rem;
+  letter-spacing: 0.3rem;
 }
 
 .hero-title {
   width: min(520px, 90vw)
 }
 
-/* 
-=== RESPONSIVE DESIGN ===
-*/
+/* === RESPONSIVE DESIGN === */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
