@@ -292,8 +292,13 @@ nav {
 }
 
 #map {
-  height: 250px;
-  width: 250px;
+  height: 500px;
+  width: 100%;
+}
+
+#map .leaflet-tile-pane {
+  filter: grayscale(100%);
+  
 }
 
 
