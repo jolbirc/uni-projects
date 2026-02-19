@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- 
+References: 
+  - Adding a map using JS retrieved from: https://leafletjs.com/
+-->
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" 
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
   <title>DETAILS | STAYSPACE</title>
 </head>
 
@@ -36,7 +44,24 @@
     <!-- PROPERTY TITLE AND LOCATION BANNER -->
     <section class="property-header section">
       <img class="hero-title" src="/img/icons/TRANQUILITY-BASE.svg" alt="TRANQUILITY BASE">
+      <br>
       <p class="location">Chester, United Kingdom</p>
+    </section>
+
+    <!-- MAP AND NEARBY -->
+    <section class="location section">
+      <h2 class="section-title">Location</h2>
+      <div class="location-content">
+        <div id="map"></div>
+      </div>
+      <div class="location-desc">
+        <h3>Nearby</h3>
+        <ul>
+          <li>Lorem ipsum dolor sit.</li>
+          <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+          <li>Lorem ipsum dolor sit!</li>
+        </ul>
+      </div>
     </section>
 
     <!-- IMAGE GALLERY -->
@@ -113,24 +138,9 @@
         </div>
       </div>
     </section>
-
-    <!-- MAP AND NEARBY -->
-    <section class="location section">
-      <h2 class="section-title">Location</h2>
-      <div class="location-content">
-        <div class="map">
-          <!-- TODO: Maps API here? -->
-        </div>
-      </div>
-      <div class="location-desc">
-        <h3>Nearby</h3>
-        <ul>
-          <li>Lorem ipsum dolor sit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
-          <li>Lorem ipsum dolor sit!</li>
-        </ul>
-      </div>
-    </section>
   </main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>
