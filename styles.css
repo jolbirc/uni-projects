@@ -105,7 +105,7 @@ button {
   max-width: 1280px;
   margin: 0 auto;
   box-sizing: border-box;
-  padding: 100px 0;
+  padding: 75px 0;
 }
 
 /* .section-bg {
@@ -286,6 +286,26 @@ nav {
 }
 
 
+/* === DETAILS PAGE === */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale();
+  border-radius: 1000000px;
+  border: 3px solid white;
+}
+
+
 /* === UTILITIES === */
 .screen-reader-only {
   display: none;
@@ -294,11 +314,13 @@ nav {
 #map {
   height: 500px;
   width: 100%;
+  border-radius: 50px;
+  border: 3px solid white;
 }
 
 #map .leaflet-tile-pane {
   filter: grayscale(100%);
-  
+
 }
 
 
@@ -345,6 +367,10 @@ nav {
 
   .airbnb-logo {
     display: initial;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
