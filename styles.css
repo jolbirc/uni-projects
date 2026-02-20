@@ -119,11 +119,11 @@ button {
 } */
 
 .section.hero {
-  background-image: url(/img/theme/hero-1.png)
+  background-image: url(img/theme/hero-1.png)
 }
 
 .section.amenities {
-  background-image: url(/img/theme/index-1.png)
+  background-image: url(img/theme/index-1.png)
 }
 
 .section.contact {
