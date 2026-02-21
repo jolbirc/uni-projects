@@ -70,6 +70,24 @@ input {
   font-family: inherit;
 }
 
+input:focus-visible {
+  outline: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert();
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  color: #ffffff;
+  border: 0;
+  border-bottom: 1px solid white;
+}
+
+
 /* Skip content button */
 .skip-link {
   position: absolute;
@@ -285,8 +303,11 @@ nav {
 }
 
 .contact-form-link-wrapper {
-  text-align: center;
-  margin-top: 20px;
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-evenly;
+  flex-direction: row;
+  gap: 20px;
 }
 
 
@@ -331,6 +352,37 @@ nav {
   border: 1px white solid;
   border-radius: 1rem;
   text-align: center;
+}
+
+
+/* === BOOKING FORM === */
+fieldset {
+  border: none;
+  box-sizing: border-box;
+  margin-inline: 25px;
+}
+
+fieldset legend {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+fieldset label:not(:first-of-type) {
+  margin-top: 20px;
+}
+
+#booking-form {
+  display: grid;
+  gap: 20px;
+  border: none;
+}
+
+#booking-form .btn {
+  width: 50%;
+  margin-inline: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
 }
 
 
