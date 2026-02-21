@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <!-- 
 References: 
   - Adding a map using JS retrieved from: https://leafletjs.com/
@@ -47,6 +47,7 @@ References:
     
     <!-- PROPERTY TITLE AND LOCATION BANNER -->
     <section class="property-header section">
+      <img src="" alt="">
       <h1 class="screen-reader-only">TRANQUILITY BASE</h1>
       <img class="hero-title" src="img/icons/TRANQUILITY-BASE.svg" alt="TRANQUILITY BASE">
       <br>
@@ -69,7 +70,7 @@ References:
       <div class="location-content">
         <div id="map"></div>
       </div>
-      <div class="location-desc">
+      <!-- <div class="location-desc">
         <br>
         <h3>Nearby</h3>
         <ul>
@@ -78,48 +79,62 @@ References:
           <li>Chester Racecourse</li>
         </ul>
       </div>
-    </section>
-
+    </section> -->
+    <br>
     <!-- IMAGE GALLERY -->
     <section class="gallery section">
       <h2 class="screen-reader-only">Gallery</h2>
+      <h2 class="section-title">Nearby</h2>
       <div class="gallery-grid">
-        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdynamic-media-cdn.tripadvisor.com%2Fmedia%2Fphoto-o%2F16%2F8b%2F84%2F5d%2Fchester-cathedral.jpg%3Fw%3D1200%26h%3D1200%26s%3D1&f=1&nofb=1&ipt=d5e5c03982ad17e94d42bb3284f5dec0d59204f20f818b1a62ced3b873cffe4d" alt="Chester Cathedral">
-        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia-cdn.tripadvisor.com%2Fmedia%2Fphoto-s%2F12%2F03%2Fc8%2F46%2Fa-few-photographs-of.jpg&f=1&nofb=1&ipt=622a0bfad338a7ee0a16809a64ed994994199e9095091b1f7e03179efc134ecc" alt="Grosvenor Park Miniature Railway">
-        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdynamic-media-cdn.tripadvisor.com%2Fmedia%2Fphoto-o%2F18%2F27%2Fe5%2Fbf%2Fclose-to-the-action-in.jpg%3Fw%3D1200%26h%3D1200%26s%3D1&f=1&nofb=1&ipt=685bb57da0c9fe17ce50a5d61fb3d95ed13e53b1c24ce4481cf6b9afc16e4239" alt="Chester Racecourse">
+        <figure>
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdynamic-media-cdn.tripadvisor.com%2Fmedia%2Fphoto-o%2F16%2F8b%2F84%2F5d%2Fchester-cathedral.jpg%3Fw%3D1200%26h%3D1200%26s%3D1&f=1&nofb=1&ipt=d5e5c03982ad17e94d42bb3284f5dec0d59204f20f818b1a62ced3b873cffe4d" alt="Chester Cathedral">
+          <figcaption>Chester Cathedral</figcaption>
+        </figure>
+        <figure>
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia-cdn.tripadvisor.com%2Fmedia%2Fphoto-s%2F12%2F03%2Fc8%2F46%2Fa-few-photographs-of.jpg&f=1&nofb=1&ipt=622a0bfad338a7ee0a16809a64ed994994199e9095091b1f7e03179efc134ecc" alt="Grosvenor Park Miniature Railway">
+          <figcaption>Grosvenor Park Miniature Railway</figcaption>
+        </figure>
+        <figure>
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdynamic-media-cdn.tripadvisor.com%2Fmedia%2Fphoto-o%2F18%2F27%2Fe5%2Fbf%2Fclose-to-the-action-in.jpg%3Fw%3D1200%26h%3D1200%26s%3D1&f=1&nofb=1&ipt=685bb57da0c9fe17ce50a5d61fb3d95ed13e53b1c24ce4481cf6b9afc16e4239" alt="Chester Racecourse">
+          <figcaption>Chester Racecourse</figcaption>
+        </figure>
       </div>
     </section>
 
     
 
     <!-- AVAILABLE ROOMS -->
-    <section class="rooms section">
-      <h2>A suite to suit all occasions!</h2>
-      <div class="rooms-grid">
-        <div class="room">
-          <h3>Party Suite</h3>
-          <p>Designed for lively stays, with all the available amenities, a minibar, and views out to Chester.</p>
-        </div>
-        <br>
-        <div class="room">
-          <h3>Family Suite</h3>
-          <p>Extra space and a cozy, child-friendly layout, with separate sleeping areas and extra amenities for the kids.</p>
-        </div>
-        <br>
-        <div class="room">
-          <h3>The Make-Believe Residency</h3>
-          <p>The star treatment! A boutique charm with flair, perfect for guests who want a room that feels like a scene from another world,</p>
-        </div>
-        <br>
-        <div class="room">
-          <h3>Honeymoon Suite</h3>
-          <p>Designed with space-faring couples in mind, this suit has extra romantic ambiance, a private balcony, and refined details that turn your stay into a small, intimate space retreat!</p>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">A suite to suit all occasions!</h2>
+        <div class="rooms-grid">
+
+          <div class="room">
+            <h3>Party Suite</h3>
+            <p>Designed for lively stays, with all the available amenities, a minibar, and views out to Chester.</p>
+          </div>
+
+          <div class="room">
+            <h3>Family Suite</h3>
+            <p>Extra space and a cozy, child-friendly layout, with separate sleeping areas and extra amenities for the kids.</p>
+          </div>
+
+          <div class="room">
+            <h3>The Make-Believe Residency</h3>
+            <p>The star treatment! A boutique charm with flair, perfect for guests who want a room that feels like a scene from another world,</p>
+          </div>
+
+          <div class="room">
+            <h3>Honeymoon Suite</h3>
+            <p>Designed with space-faring couples in mind, this suit has extra romantic ambiance, a private balcony, and refined details that turn your stay into a small, intimate space retreat!</p>
+          </div>
+
         </div>
       </div>
     </section>
 
     <!-- AMENITIES AND PROPERTY FEATURES -->
-    <section class="features section">
+    <!-- <section class="features section">
       <h2 class="section-title">Features & Amenities</h2>
       <div class="features-grid">
         <div class="feature-cat">
@@ -152,7 +167,7 @@ References:
           </ul>
         </div>
       </div>
-    </section>
+    </section> -->
   </main>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
