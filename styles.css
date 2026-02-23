@@ -145,14 +145,17 @@ form {
 } */
 
 .section.hero {
+  /* Microsoft. (2026). Image generated using Copilot. The image was generated in response to this prompt: "Draw me a realistic image of a zero gravity VR room within a guest house on Airbnb." Copilot https://copilot.microsoft.com/ */
   background-image: url(img/theme/hero-1.png)
 }
 
 .section.amenities {
+  /* Microsoft. (2026). Image generated using Copilot. The image was generated in response to this prompt: "Now draw me the gaming room for the same apartment." [SEE ABOVE] Copilot https://copilot.microsoft.com/ */
   background-image: url(img/theme/index-1.png)
 }
 
 .section.contact {
+  /* Microsoft. (2026). Image generated using Copilot. The image was generated in response to this prompt: "And now draw me it's master bedroom" [SEE ABOVE] Copilot https://copilot.microsoft.com/ */
   background-image: url(img/theme/index-2.png);
 }
 
