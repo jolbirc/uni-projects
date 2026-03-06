@@ -1,0 +1,476 @@
+/* 
+General references:
+- Set attributes for docs root element (https://www.w3schools.com/cssref/sel_root.php)
+- Positioning (https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Positioning)
+- Units used in resizing retrieved from: https://www.sitepoint.com/css-viewport-units-quick-start/
+- Clamp value within range for (https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp)
+- Sticky navbar https://www.w3schools.com/howto/howto_js_navbar_sticky.asp
+
+Responsive design choices and references:
+- Responsive breakpoints retrieved from: https://www.browserstack.com/guide/responsive-design-breakpoints
+- All design choices made in line with info retrieved from: https://developer.mozilla.org/en-US/docs/Glossary/Mobile_First
+- Padding block (Info retrieved from https://www.w3schools.com/CSSref/css_pr_padding-block.php)
+
+Accessibility considerations and references:
+- Reduced motion (Retrieved from https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion)
+- Skip to content button (https://www.accessibilitychecker.org/wcag-guides/ensure-all-skip-links-have-a-focusable-target/)
+*/
+
+
+/* === GLOBAL === */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  line-height: 2;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #000000; 
+  color: #ffffff; 
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input {
+  font-family: inherit;
+}
+
+input:focus-visible {
+  outline: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert();
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  color: #ffffff;
+  border: 0;
+  border-bottom: 1px solid white;
+  font-family: inherit
+}
+
+form {
+  text-align: left;
+}
+
+/* Skip content button */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  padding: 10px;
+  background: #ffffff;
+  color: #000000;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0)
+}
+
+
+/* === MAIN CONTENT === */
+:root {
+  /* Global vars; sizes default for smallest screens (0-480) */
+  --container-padding: 16px; 
+  --container-max-width: 100%;
+  --section-padding: 28px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding)
+}
+
+.section {
+  background-image: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  max-width: 1280px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 75px 0;
+}
+
+/* .section-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  opacity: 0.5;
+} */
+
+.section.hero {
+  /* Microsoft. (2026). Image generated using Copilot. The image was generated in response to this prompt: "Draw me a realistic image of a zero gravity VR room within a guest house on Airbnb." Copilot https://copilot.microsoft.com/ */
+  background-image: url(img/theme/hero-1.png)
+}
+
+.section.amenities {
+  /* Microsoft. (2026). Image generated using Copilot. The image was generated in response to this prompt: "Now draw me the gaming room for the same apartment." [SEE ABOVE] Copilot https://copilot.microsoft.com/ */
+  background-image: url(img/theme/index-1.png)
+}
+
+.section.contact {
+  /* Microsoft. (2026). Image generated using Copilot. The image was generated in response to this prompt: "And now draw me it's master bedroom" [SEE ABOVE] Copilot https://copilot.microsoft.com/ */
+  background-image: url(img/theme/index-2.png);
+}
+
+.section-title {
+  margin: 0 0 18px 0;
+  text-align: center;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  letter-spacing: 0.3rem;
+}
+
+.btn {
+  color: #ffffff;
+  padding: 12px 14px;
+  border: 1px solid #f4f4f4;
+  background: #0000003a;
+  cursor: pointer;
+}
+
+
+/* === NAV === */
+header {
+  padding-block: 12px;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  z-index: 1000000;
+  background: #000;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.site-header {
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.branding-logo {
+  display: none;
+  max-height: 32px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
+}
+
+.airbnb-logo {
+  display: none;
+  max-width: 100px;
+  width: 100%;
+  height: auto;
+}
+
+
+/* === HERO (INDEX) === */
+.hero {
+  min-height: 55vh;
+}
+
+.hero-content {
+  padding: 12px;
+}
+
+.welcome-text {
+  margin: 0 0 10px 0;
+  font-size: clamp(1.4rem, 3.5vw, 3rem);
+  letter-spacing: 0.3rem;
+}
+
+.hero-title {
+  width: min(520px, 90vw);
+}
+
+
+/* === AMENITIES (INDEX) === */
+.amenities-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 0 100px;
+}
+
+.amenity-item {
+  background:#00000086;
+  border-radius: 20px;
+  padding: 16px;
+  text-align: center;
+}
+
+.amenity-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 10px auto;
+}
+
+
+/* === CONTACT (INDEX) === */
+.contact-inner {
+  display: grid;
+  justify-items: stretch;
+}
+
+.contact-panel {
+  text-align: center;
+  background: #00000086;
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+.contact-form {
+  display: grid;
+  gap: 20px;
+}
+
+.field-label {
+  display: block;
+}
+
+.field-input {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  color: #ffffff;
+  border: 0;
+  border-bottom: 1px solid white;
+}
+
+.field-input:focus-visible {
+  outline: none;
+}
+
+.contact-form .btn {
+  width: 50%;
+  margin-inline: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+.contact-form-link-wrapper {
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-evenly;
+  flex-direction: row;
+  gap: 20px;
+}
+
+
+/* === DETAILS PAGE === */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 100px;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale();
+  border-radius: 1000000px;
+  border: 3px solid white;
+}
+
+.gallery-grid figcaption {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.property {
+  text-align: center;
+}
+
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.room {
+  padding: 1rem;
+  border: 1px white solid;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+
+/* === BOOKING FORM === */
+fieldset {
+  border: none;
+  box-sizing: border-box;
+  margin-inline: 25px;
+}
+
+fieldset legend {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+fieldset label:not(:first-of-type) {
+  margin-top: 20px;
+}
+
+#booking-form {
+  display: grid;
+  gap: 20px;
+  border: none;
+}
+
+#booking-form .btn {
+  width: 50%;
+  margin-inline: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+
+#room-choice:focus {
+  background: rgba(0, 0, 0, 0.521);
+  border-radius: 5px;
+}
+
+/* === UTILITIES === */
+.screen-reader-only {
+  display: none;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+  border-radius: 50px;
+  border: 3px solid white;
+}
+
+#map .leaflet-tile-pane {
+  filter: grayscale(100%);
+}
+
+
+/* === RESPONSIVE DESIGN === */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+    transition: none;
+    animation: none;
+  }
+}
+
+/* Screen width 481-768, as per references guidelines */
+@media (min-width: 481px) {
+  :root {
+    --container-padding: 20px;
+    --section-padding: 32px;
+    --container-max-width: 768px;
+  }
+
+}
+
+/* Screen width 769-1279, as per referenced guidelines */
+@media (min-width: 769px) {
+  :root {
+    --container-padding: 24px;
+    --section-padding: 48px;
+    --container-max-width: 1120px;
+  }
+
+  .amenities-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 75px;
+    margin: 25px 75px;
+  }
+
+  .contact-inner {
+    justify-items: end;
+  }
+
+  .branding-logo {
+    display: initial;
+  }
+
+  .airbnb-logo {
+    display: initial;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+}
+
+/* Screen width 1280+, as per referenced guidelines */
+@media (min-width: 1280px) {
+  :root {
+    --container-padding: 32px;
+    --container-max-width: 1200px;
+  }
+}
