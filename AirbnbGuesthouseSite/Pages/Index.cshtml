@@ -1,10 +1,75 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "HOME";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!-- 
+References: 
+    - Anchor Tag Helper in ASP.NET Core (https://learn.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in/anchor-tag-helper?view=aspnetcore-10.0)
+-->
+
+<!-- LANDING PAGE HERO IMG -->
+<section class="hero">
+    <!-- img class="section-bg" src="img/theme/hero-1.png" alt="" -->
+    <div class="container hero-content">
+        <p class="welcome-text">WELCOME TO</p>
+        <h1 class="screen-reader-only">TRANQUILITY BASE</h1>
+        <img class="hero-title" src="~/img/icons/TRANQUILITY-BASE.svg" alt="TRANQUILITY BASE" />
+    </div>
+</section>
+
+<!-- KEY AMENITIES -->
+<section class="amenities">
+    <!-- img class="section-bg" src="img/theme/index-1.png" alt="" -->
+    <h2 class="section-title">AMENITIES</h2>
+    <div class="amenities-grid">
+        <div class="amenity-item">
+            <div class="amenity-icon">
+                <img src="~/img/icons/headset.png" alt="" />
+            </div>
+            <p>Purpose built virtual reality room, bringing the stars to you!</p>
+        </div>
+        <div class="amenity-item">
+            <div class="amenity-icon">
+                <img src="~/img/icons/space.png" alt="" />
+            </div>
+            <p>Immersive interstellar sci-fi decor throughout.</p>
+        </div>
+        <div class="amenity-item">
+            <div class="amenity-icon">
+                <img src="~/img/icons/gaming.png" alt="" />
+            </div>
+            <p>High-end simulators and gaming rigs.</p>
+        </div>
+    </div>
+</section>
+
+<!-- QUICK ENQUIRY -->
+<section class="contact">
+    <!-- img class="section-bg" src="img/theme/index-2.png" alt="" -->
+    <div class="container contact-inner">
+        <div class="contact-panel">
+            <h2 class="section-title">REQUEST AN BOOKING FORM</h2>
+            <form class="contact-form">
+                <label class="field">
+                    <span class="field-label">Name</span>
+                    <input class="field-input" type="text" placeholder="John Smith" required />
+                </label>
+                <label class="field">
+                    <span class="field-label">Email</span>
+                    <input class="field-input" type="email" placeholder="example@email.co.uk" required />
+                </label>
+                <label class="field">
+                    <span class="field-label">Contact Number</span>
+                    <input class="field-input" type="tel" placeholder="0123456789" />
+                </label>
+                <button class="btn" type="submit">Request Form</button>
+            </form>
+            <div class="contact-form-link-wrapper">
+                <a class="contact-form-link" asp-page="/Contact">Or fill out our information form -</a>
+            </div>
+        </div>
+    </div>
+</section>
+
