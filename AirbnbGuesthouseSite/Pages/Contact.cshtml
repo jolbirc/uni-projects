@@ -1,19 +1,55 @@
 @page
 @model AirbnbGuesthouseSite.Pages.Contact
-
 @{
-    Layout = null;
+    ViewData["Title"] = "Contact & Book";
 }
 
-<!DOCTYPE html>
+<section class="contact section">
+    <div class="container contact-inner">
+        <div class="contact-panel">
+            <h2 class="section-title">BOOK YOUR STAY OR GET IN TOUCH</h2>
+            <form id="booking-form" method="POST">
+                <fieldset>
+                    <legend class="screen-reader-only">Your Information</legend>
 
-<html>
-<head>
-    <title>CI/CD TEST</title>
-</head>
-<body>
-<div>
-    <h1>This is to test how/if CI/CD to plesk works sans GitHub actions</h1>
-</div>
-</body>
-</html>
+                    <label class="field" for="forename">Forename:</label>
+                    <input class="field-input" type="text" id="forename" name="forename" required>
+
+                    <label class="field-label" for="surname">Surname:</label>
+                    <input class="field-input" type="text" id="surname" name="surname" required>
+
+                    <label class="field-label" for="email">Email Address:</label>
+                    <input class="field-input" type="email" id="email" name="email" required>
+
+                    <label class="field-label" for="phone">Contact Number:</label>
+                    <input class="field-input" type="tel" id="phone" name="phone">
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Booking & Enquiry Details</legend>
+
+                    <label class="field-label" for="check-in">Check-in Date:</label>
+                    <input type="date" id="check-in" name="check-in">
+
+                    <label class="field-label" for="check-out">Check-out Date:</label>
+                    <input type="date" id="check-out" name="check-out">
+
+                    <label class="field-label" for="room-choice">Room Type:</label>
+                    <select name="room-choice" id="room-choice">
+                        <option value="">Select:</option>
+                        <option value="single">Single Room</option>
+                        <option value="double">Double Room</option>
+                        <option value="party">Party Suite (up to 8 guests)</option>
+                        <option value="family">Family Suite</option>
+                    </select>
+                </fieldset>
+                <br>
+                <div class="contact-form-link-wrapper">
+                    <button class="btn" type="submit">Send Enquiry</button>
+                    <button class="btn" type="reset">Clear</button>
+                </div>
+            </form>
+            <small>Or contact our receptionist Mark directly on 0123456789</small>
+        </div>
+    </div>
+</section>
