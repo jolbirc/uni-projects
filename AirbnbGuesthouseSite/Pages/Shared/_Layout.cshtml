@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿<!-- 
+References: 
+- Sections in Layout View ASP.NET Core MVC, retrieved from: (https://dotnettutorials.net/lesson/sections-in-layout-view-in-asp-net-core-mvc/)
+-->
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -31,7 +36,8 @@
     @RenderBody()
 </main>
 
-<script src="~/scripts.js"></script>
 @await RenderSectionAsync("Scripts", required: false)
+<script src="~/js/scripts.js"></script>
+
 </body>
 </html>
