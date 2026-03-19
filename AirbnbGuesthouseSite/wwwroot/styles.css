@@ -422,6 +422,89 @@ fieldset label:not(:first-of-type) {
     align-items: center;
 }
 
+.admin-wrapper {
+    max-width: 1250px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    line-height: 2;
+}
+
+.add-room {
+    font-weight: bold;
+    font-size: 100px;
+}
+
+.admin-wrapper h1,
+.admin-wrapper h2,
+.admin-wrapper h3,
+.admin-wrapper h4 {
+    margin-bottom: 1.5rem;
+}
+
+.table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.table th:nth-child(1),
+.table td:nth-child(1) {
+    width: 20%;
+    text-align: center !important;
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2) {
+    width: 60%;
+    padding: 0 100px;
+}
+
+.table th:nth-child(3),
+.table td:nth-child(3) {
+    width: 20%;
+    text-align: center !important;
+}
+
+.admin-wrapper th, 
+.admin-wrapper td {
+    padding: 2.5rem 1rem;
+}
+
+.admin-wrapper th {
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.admin-wrapper thead tr {
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.admin-wrapper dt {
+    font-weight: bold;
+}
+
+.admin-wrapper dd {
+    margin-bottom: 20px;
+}
+
+.admin-wrapper .form-control {
+    padding: 1rem;
+    background: #111111;
+    color: #ffffff;
+}
+
+.form-group {
+    padding: 20px;
+}
+
+.admin-wrapper .btn {
+    margin: 1.5rem auto 0;
+    text-align: center;
+    width: 200px;
+    display: block;
+}
+
 #login-submit {
     display: block;
     margin: 40px auto;
