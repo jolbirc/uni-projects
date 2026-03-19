@@ -416,6 +416,18 @@ fieldset label:not(:first-of-type) {
 }
 
 
+/* === ADMIN SECTION === */
+.admin {
+    max-width: 500px;
+    align-items: center;
+}
+
+#login-submit {
+    display: block;
+    margin: 40px auto;
+}
+
+
 /* === RESPONSIVE DESIGN === */
 @media (prefers-reduced-motion: reduce) {
   html {
