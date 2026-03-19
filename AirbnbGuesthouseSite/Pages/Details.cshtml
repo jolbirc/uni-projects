@@ -60,23 +60,15 @@ References:
 <section class="section">
     <div class="container">
         <h2 class="section-title">A suite to suit all occasions!</h2>
+
         <div class="rooms-grid">
-            <div class="room">
-                <h3>Party Suite</h3>
-                <p>Designed for lively stays, with all the available amenities, a minibar, and views out to Chester.</p>
-            </div>
-            <div class="room">
-                <h3>Family Suite</h3>
-                <p>Extra space and a cozy, child-friendly layout, with separate sleeping areas and extra amenities for the kids.</p>
-            </div>
-            <div class="room">
-                <h3>The Make-Believe Residency</h3>
-                <p>The star treatment! A boutique charm with flair, perfect for guests who want a room that feels like a scene from another world.</p>
-            </div>
-            <div class="room">
-                <h3>Honeymoon Suite</h3>
-                <p>Designed with space-faring couples in mind, this suit has extra romantic ambiance, a private balcony, and refined details that turn your stay into a small, intimate space retreat!</p>
-            </div>
+            @foreach (var room in Model.Rooms)
+            {
+                <div class="room">
+                    <h3>@room.RoomName</h3>
+                    <p>@room.RoomDescription</p>
+                </div>
+            }
         </div>
     </div>
 </section>
