@@ -1,13 +1,25 @@
+/* REFERENCES
+- "Scaffold Identity into an MVC project without existing authorization", retrieved from https://learn.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-6.0&tabs=visual-studio#scaffold-identity-into-a-razor-project-with-authorization
+*/
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using AirbnbGuesthouseSite.Data;
+using Microsoft.AspNetCore.Identity;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDefaultIdentity<IdentityUser>(options  => options.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<AirbnbGuesthouseSiteContext>();
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<AirbnbGuesthouseSiteContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("AirbnbGuesthouseSiteContext") ?? throw new InvalidOperationException("Connection string 'AirbnbGuesthouseSiteContext' not found.")));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "Identity/Account/Login";
+    options.AccessDeniedPath = "Identity/Account/AccessDenied";
+});
 
 var app = builder.Build();
 
@@ -31,7 +43,9 @@ app.UseHttpsRedirection();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
+app.MapRazorPages();
 
 app.MapStaticAssets();
 app.MapRazorPages()
