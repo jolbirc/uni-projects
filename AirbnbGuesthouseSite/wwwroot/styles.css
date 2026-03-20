@@ -78,7 +78,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert();
 }
 
-input, select {
+input, select, textarea {
   width: 100%;
   padding: 10px;
   background: transparent;
@@ -86,6 +86,11 @@ input, select {
   border: 0;
   border-bottom: 1px solid white;
   font-family: inherit
+}
+
+.success-message {
+    margin-bottom: 1rem;
+    color: #2ffc29;
 }
 
 form {
