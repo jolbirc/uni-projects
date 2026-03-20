@@ -12,9 +12,9 @@ namespace AirbnbGuesthouseSite.Pages.Room
 {
     public class IndexModel : PageModel
     {
-        private readonly AirbnbGuesthouseSite.Data.AirbnbGuesthouseSiteContext _context;
+        private readonly AirbnbGuesthouseSiteContext _context;
 
-        public IndexModel(AirbnbGuesthouseSite.Data.AirbnbGuesthouseSiteContext context)
+        public IndexModel(AirbnbGuesthouseSiteContext context)
         {
             _context = context;
         }

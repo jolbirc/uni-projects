@@ -4,6 +4,7 @@ using AirbnbGuesthouseSite.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AirbnbGuesthouseSite.Migrations
 {
     [DbContext(typeof(AirbnbGuesthouseSiteContext))]
-    partial class AirbnbGuesthouseSiteContextModelSnapshot : ModelSnapshot
+    [Migration("20260320105425_EditEnquiries")]
+    partial class EditEnquiries
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

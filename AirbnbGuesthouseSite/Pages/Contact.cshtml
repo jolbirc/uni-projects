@@ -14,49 +14,37 @@ References:
 <section class="contact section">
     <div class="container contact-inner">
         <div class="contact-panel">
-            <h2 class="section-title">BOOK YOUR STAY OR GET IN TOUCH</h2>
-            <form id="booking-form" method="POST">
+            <h2 class="section-title">GET IN TOUCH</h2>
+
+            @if (!string.IsNullOrEmpty(Model.SuccessMessage))
+            {
+                <p class="success-message">@Model.SuccessMessage</p>
+            }
+
+            <form id="booking-form" method="post">
                 <fieldset>
-                    <legend class="screen-reader-only">Your Information</legend>
+                    <legend class="screen-reader-only">Contact form</legend>
 
-                    <label class="field" for="forename">Forename:</label>
-                    <input class="field-input" type="text" id="forename" name="forename" required>
+                    <label class="field-label" asp-for="Enquiry.Name"></label>
+                    <input class="field-input" asp-for="Enquiry.Name" />
+                    <span asp-validation-for="Enquiry.Name" class="text-danger"></span>
 
-                    <label class="field-label" for="surname">Surname:</label>
-                    <input class="field-input" type="text" id="surname" name="surname" required>
+                    <label class="field-label" asp-for="Enquiry.Email"></label>
+                    <input class="field-input" asp-for="Enquiry.Email" />
+                    <span asp-validation-for="Enquiry.Email" class="text-danger"></span>
 
-                    <label class="field-label" for="email">Email Address:</label>
-                    <input class="field-input" type="email" id="email" name="email" required>
-
-                    <label class="field-label" for="phone">Contact Number:</label>
-                    <input class="field-input" type="tel" id="phone" name="phone">
+                    <label class="field-label" asp-for="Enquiry.Message"></label>
+                    <textarea class="field-input" asp-for="Enquiry.Message" rows="6"></textarea>
+                    <span asp-validation-for="Enquiry.Message" class="text-danger"></span>
                 </fieldset>
+
                 <br>
-                <fieldset>
-                    <legend>Booking & Enquiry Details</legend>
 
-                    <label class="field-label" for="check-in">Check-in Date:</label>
-                    <input type="date" id="check-in" name="check-in">
-
-                    <label class="field-label" for="check-out">Check-out Date:</label>
-                    <input type="date" id="check-out" name="check-out">
-
-                    <label class="field-label" for="room-choice">Room Type:</label>
-                    <select name="room-choice" id="room-choice">
-                        <option value="">Select:</option>
-                        <option value="single">Single Room</option>
-                        <option value="double">Double Room</option>
-                        <option value="party">Party Suite (up to 8 guests)</option>
-                        <option value="family">Family Suite</option>
-                    </select>
-                </fieldset>
-                <br>
                 <div class="contact-form-link-wrapper">
                     <button class="btn" type="submit">Send Enquiry</button>
                     <button class="btn" type="reset">Clear</button>
                 </div>
             </form>
-            <small>Or contact our receptionist Mark directly on 0123456789</small>
         </div>
     </div>
 </section>
