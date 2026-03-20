@@ -516,12 +516,12 @@ fieldset label:not(:first-of-type) {
 }
 
 #admin-login {
-    color: #c42a2a;
+    color: #ff5959;
     text-align: right;
 }
 
 #admin-logout {
-    color: #c42a2a;
+    color: #ff5959;
     font-size: 18px;
     padding: 20px;
 }

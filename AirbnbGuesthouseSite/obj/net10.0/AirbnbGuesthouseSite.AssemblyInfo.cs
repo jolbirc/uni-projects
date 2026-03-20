@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("AirbnbGuesthouseSite")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+352f5793b8f565de1e163e266b41b409ddb53b5a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+79c3dd97b9339dbac10606ccc2ebb24e2d106ac4")]
 [assembly: System.Reflection.AssemblyProductAttribute("AirbnbGuesthouseSite")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AirbnbGuesthouseSite")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
