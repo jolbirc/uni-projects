@@ -16,5 +16,6 @@ namespace AirbnbGuesthouseSite.Data
         }
 
         public DbSet<Room> Rooms { get; set; } = default!;
+        public DbSet<Enquiry> Enquiries { get; set; }
     }
 }
