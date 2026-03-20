@@ -14,6 +14,7 @@ public class Details : PageModel
         _context = context;
     }
 
+    // pull uploaded room details from db
     public IList<Models.Room> Rooms { get; set; } = new List<Models.Room>();
 
     public async Task OnGetAsync()

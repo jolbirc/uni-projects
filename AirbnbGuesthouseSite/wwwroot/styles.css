@@ -510,6 +510,17 @@ fieldset label:not(:first-of-type) {
     margin: 40px auto;
 }
 
+#admin-login {
+    color: #c42a2a;
+    text-align: right;
+}
+
+#admin-logout {
+    color: #c42a2a;
+    font-size: 18px;
+    padding: 20px;
+}
+
 
 /* === RESPONSIVE DESIGN === */
 @media (prefers-reduced-motion: reduce) {

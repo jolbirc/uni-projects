@@ -1,3 +1,7 @@
+<!-- References:
+    - Logout functionality retrieved from: https://www.mikesdotnetting.com/article/312/introduction-to-identity-in-razor-pages
+-->
+
 @page
 @model AirbnbGuesthouseSite.Pages.Room.IndexModel
 
@@ -5,7 +9,12 @@
     ViewData["Title"] = "INDEX | ";
     Layout = "/Pages/Shared/_Layout.cshtml";
 }
-
+<form asp-area="Identity"
+      asp-page="/Account/Logout"
+      asp-route-returnUrl="@Url.Page("/Index")"
+      method="post">
+    <button type="submit" id="admin-logout">Logout</button>
+</form>
 <div class="admin-wrapper">
     <h1>Edit Rooms</h1>
 

@@ -46,8 +46,8 @@ using (var scope = app.Services.CreateScope())
 {
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
 
-    var email = "admin@guesthouse.local";
-    var password = "ChangeMe123!";
+    var email = "admin@airbnbguesthouse.test";
+    var password = "R4ndomPa55123!";
 
     var existingUser = await userManager.FindByEmailAsync(email);
 
