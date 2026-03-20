@@ -1,5 +1,5 @@
 # AIR BNB GUESTHOUSE SITE
-*Last updated: 23/02/26*
+*Last updated: 20/03/26*
 
 ---
 **Air B&B guest house website for module CO5078 (Web Dev), implemented as a three page static site and extended into ASP.NET Razor pages and utilising SQL.**
@@ -26,7 +26,8 @@
 
 ### Deploy Tools
 - **cPanel Linux Server** - Site hosting.
-- **FTP with a CI/CD Pipeline** - Automated deployment via GitHub. 
+- **FTP with a CI/CD Pipeline** - Automated deployment via GitHub.
+- **Plesk**.
 
 ### Third Party Services
 - **Leaflet Maps API** - Location display on contact page using https://leafletjs.com/.
@@ -41,12 +42,11 @@
 - Index: Overview of property, high quality images, direct link to booking form.
 - Details: A more detailed overview of the property, what's nearby, and an interactive map.
 - Contact: A booking form for users to make bookings, extended using ASP.NET.
+- Admin: Takes the property own to an admin panel, where they can update the property details.
 
 ---
 ## LINKS
-- [**Website**](https://2312292.linux.studentwebserver.co.uk/CO5078/index.html)
-- [**Wireframe**](https://www.figma.com/design/DHVn6CM78pXU35A0up6aTI/Stayspace?node-id=0-1&t=BTWyVUWC3BwYGiro-1)
-- [**Miro Board**](https://miro.com/app/board/uXjVGQV-QwY=/)
+- [**Website**]([https://2312292.linux.studentwebserver.co.uk/CO5078/index.html](https://2312292.win.studentwebserver.co.uk/CO5078/))
   
 ---
 ## NOTES
