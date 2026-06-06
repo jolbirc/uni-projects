@@ -1,0 +1,8 @@
+/tmp/rider-publish13367223931274314504/AirbnbGuesthouseSite
+/tmp/rider-publish13367223931274314504/appsettings.Development.json
+/tmp/rider-publish13367223931274314504/appsettings.json
+/tmp/rider-publish13367223931274314504/dotnet-tools.json
+/tmp/rider-publish13367223931274314504/AirbnbGuesthouseSite.dll
+/tmp/rider-publish13367223931274314504/AirbnbGuesthouseSite.deps.json
+/tmp/rider-publish13367223931274314504/AirbnbGuesthouseSite.runtimeconfig.json
+/tmp/rider-publish13367223931274314504/AirbnbGuesthouseSite.pdb

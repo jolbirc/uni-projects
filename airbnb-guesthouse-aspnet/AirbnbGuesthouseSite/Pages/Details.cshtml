@@ -1,0 +1,79 @@
+@page
+@model AirbnbGuesthouseSite.Pages.Details
+@{
+    ViewData["Title"] = "DETAILS | ";
+}
+
+<!-- 
+References: 
+- Adding a map using JS retrieved from: https://leafletjs.com/
+- WCAG Checker https://validator.w3.org/nu/ [PASSED]
+- Accessibility checker https://wave.webaim.org/ [NO ERRORS]
+- Sections in Layout View ASP.NET Core MVC, retrieved from: (https://dotnettutorials.net/lesson/sections-in-layout-view-in-asp-net-core-mvc/)
+-->
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+<section class="property-header section">
+    <h1 class="screen-reader-only">TRANQUILITY BASE</h1>
+    <img class="hero-title" src="~/img/icons/TRANQUILITY-BASE.svg" alt="TRANQUILITY BASE">
+    <br>
+    <p class="location">Chester, United Kingdom</p>
+</section>
+
+<section class="property section">
+    <div class="overview-content container">
+        <h2 class="section-title">About The Property</h2>
+        <p>Our modern space-themed guest suite is located in the heart of historical Chester, designed with those looking for a space getaway in mind! As well as the high-tech simulation and gaming facilities on-site, the guesthouse is located in the city centre of Chester, close to local amenities and attractions, to provide all visitors with a complete getaway for all ages and occassions.</p>
+        <br>
+        <p>Our guesthouse is also located within a larger complex with an on-site bar, casino, a day-spa, and a small theatre that hosts two shows a day, four nights a week. Complete with food outlets, all your needs are catered for, and includes our rooftop taqueria!</p>
+    </div>
+</section>
+
+<section class="location section">
+    <h2 class="section-title">Location</h2>
+    <div class="location-content">
+        <div id="map"></div>
+    </div>
+</section>
+<br>
+
+<section class="gallery section">
+    <h2 class="screen-reader-only">Gallery</h2>
+    <h2 class="section-title">Nearby</h2>
+    <div class="gallery-grid">
+        <figure>
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdynamic-media-cdn.tripadvisor.com%2Fmedia%2Fphoto-o%2F16%2F8b%2F84%2F5d%2Fchester-cathedral.jpg%3Fw%3D1200%26h%3D1200%26s%3D1&f=1&nofb=1&ipt=d5e5c03982ad17e94d42bb3284f5dec0d59204f20f818b1a62ced3b873cffe4d" alt="Chester Cathedral">
+            <figcaption>Chester Cathedral</figcaption>
+        </figure>
+        <figure>
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia-cdn.tripadvisor.com%2Fmedia%2Fphoto-s%2F12%2F03%2Fc8%2F46%2Fa-few-photographs-of.jpg&f=1&nofb=1&ipt=622a0bfad338a7ee0a16809a64ed994994199e9095091b1f7e03179efc134ecc" alt="Grosvenor Park Miniature Railway">
+            <figcaption>Grosvenor Park Miniature Railway</figcaption>
+        </figure>
+        <figure>
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdynamic-media-cdn.tripadvisor.com%2Fmedia%2Fphoto-o%2F18%2F27%2Fe5%2Fbf%2Fclose-to-the-action-in.jpg%3Fw%3D1200%26h%3D1200%26s%3D1&f=1&nofb=1&ipt=685bb57da0c9fe17ce50a5d61fb3d95ed13e53b1c24ce4481cf6b9afc16e4239" alt="Chester Racecourse">
+            <figcaption>Chester Racecourse</figcaption>
+        </figure>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">A suite to suit all occasions!</h2>
+
+        <div class="rooms-grid">
+            @foreach (var room in Model.Rooms)
+            {
+                <div class="room">
+                    <h3>@room.RoomName</h3>
+                    <p>@room.RoomDescription</p>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/js/scripts.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+}

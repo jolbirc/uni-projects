@@ -1,0 +1,45 @@
+﻿<!-- 
+References: 
+- Sections in Layout View ASP.NET Core MVC, retrieved from: (https://dotnettutorials.net/lesson/sections-in-layout-view-in-asp-net-core-mvc/)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]STAYSPACE</title>
+    <link rel="stylesheet" href="~/styles.css" />
+</head>
+<body>
+<!-- SITEWIDE HEADER/NAV -->
+<a class="skip-link" href="#main">Skip to Main Content</a>
+<header class="site-header">
+    <div class="container">
+        <nav class="site-nav" aria-label="Primary navigation">
+            <a class="branding" href="/">
+                <img class="branding-logo" src="~/img/icons/logo.svg" alt="StaySpace Logo" />
+            </a>
+            <ul class="nav-links">
+                <li><a asp-page="/Index">Home</a></li>
+                <li><a asp-page="/Details">Details</a></li>
+                <li><a asp-page="/Contact">Book</a></li>
+            </ul>
+            <a class="airbnb" href="https://airbnb.com" target="_blank" rel="noopener noreferrer">
+                <img class="airbnb-logo" src="~/img/icons/Airbnb-Logo-2014-718276488.png" alt="Airbnb Logo" />
+            </a>
+            |
+            <a asp-page="/Room/Index" id="admin-login">Admin</a>
+        </nav>
+    </div>
+</header>
+
+<main id="main">
+    @RenderBody()
+</main>
+
+@await RenderSectionAsync("Scripts", required: false)
+<script src="~/js/scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+@page
+@model AirbnbGuesthouseSite.Pages.Contact
+
+@{
+    ViewData["Title"] = "CONTACT | ";
+}
+
+<!-- 
+References: 
+- WCAG Checker https://validator.w3.org/nu/ [PASSED]
+- Accessibility checker https://wave.webaim.org/ [NO ERRORS]
+-->
+
+<section class="contact section">
+    <div class="container contact-inner">
+        <div class="contact-panel">
+            <h2 class="section-title">GET IN TOUCH</h2>
+
+            @if (!string.IsNullOrEmpty(Model.SuccessMessage))
+            {
+                <p class="success-message">@Model.SuccessMessage</p>
+            }
+
+            <form id="booking-form" method="post">
+                <fieldset>
+                    <legend class="screen-reader-only">Contact form</legend>
+
+                    <label class="field-label" asp-for="Enquiry.Name"></label>
+                    <input class="field-input" asp-for="Enquiry.Name" />
+                    <span asp-validation-for="Enquiry.Name" class="text-danger"></span>
+
+                    <label class="field-label" asp-for="Enquiry.Email"></label>
+                    <input class="field-input" asp-for="Enquiry.Email" />
+                    <span asp-validation-for="Enquiry.Email" class="text-danger"></span>
+
+                    <label class="field-label" asp-for="Enquiry.Message"></label>
+                    <textarea class="field-input" asp-for="Enquiry.Message" rows="6"></textarea>
+                    <span asp-validation-for="Enquiry.Message" class="text-danger"></span>
+                </fieldset>
+
+                <br>
+
+                <div class="contact-form-link-wrapper">
+                    <button class="btn" type="submit">Send Enquiry</button>
+                    <button class="btn" type="reset">Clear</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+References: 
+  - WCAG Checker https://validator.w3.org/nu/ [PASSED]
+  - Accessibility checker https://wave.webaim.org/ [NO ERRORS]
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>BOOKING | STAYSPACE</title>
+</head>
+
+<body>
+  <!-- SITEWIDE HEADER/NAV -->
+  <a class="skip-link" href="#main">Skip to Main Content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="site-nav" aria-label="Primary navigation">
+          <a class="branding" href="index.html">
+            <img class="branding-logo" src="img/icons/logo.svg" alt="StaySpace Logo">
+          </a>
+
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="details.html">Details</a></li>
+            <li><a href="contact.html">Book</a></li>
+          </ul>
+
+          <a class="airbnb" href="https://airbnb.com" target="_blank" rel="noopener noreferrer">
+            <img class="airbnb-logo" src="img/icons/Airbnb-Logo-2014-718276488.png" alt="Airbnb Logo">
+          </a>
+      </nav>
+    </div>
+  </header>
+  
+  <main id="main">
+    <!--BOOKING REQUEST FORM -->
+    <section class="contact section">
+      <div class="container contact-inner">
+        <div class="contact-panel">
+          <h2 class="section-title">BOOK YOUR STAY TODAY</h2>
+          <form id="booking-form" method="POST">
+            <fieldset>
+              <legend class="screen-reader-only">Your Information</legend>
+
+              <label class="field" for="forename">Forename:</label>
+              <input class="field-input" type="text" id="forename" name="forename" required>
+
+              <label class="field-label" for="surname">Surname:</label>
+              <input class="field-input" type="text" id="surname" name="surname" required>
+
+              <label class="field-label" for="phone">Contact Number:</label>
+              <input class="field-input" type="tel" id="phone" name="phone" required>
+            </fieldset>
+            <br>
+            <fieldset>
+              <legend>Booking Details</legend>
+
+              <label class="field-label" for="check-in">Check-in Date:</label>
+              <input type="date" id="check-in" name="check-in" required>
+
+              <label class="field-label" for="check-out">Check-out Date:</label>
+              <input type="date" id="check-out" name="check-out" required>
+
+              <label class="field-label" for="room-choice">Room Type:</label>
+              <select name="room-choice" id="room-choice" required>
+                <option value="">Select:</option>
+                <option value="single">Single Room</option>
+                <option value="double">Double Room</option>
+                <option value="party">Party Suite (up to 8 guests)</option>
+                <option value="family">Family Suite</option>
+              </select>
+              <div class="contact-form-link-wrapper">
+                <button class="btn" type="submit">Request Your Booking!</button>
+                <button class="btn" type="reset">Clear</button>
+              </div>
+            </fieldset>
+          </form>
+          <small>Or contact our receptionist Mark directly on 0123456789</small>
+        </div>
+      </div>
+      
+    </section>
+    
+    
+  </main>
+</body>
+</html>
