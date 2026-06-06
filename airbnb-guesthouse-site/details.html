@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+References: 
+  - Adding a map using JS retrieved from: https://leafletjs.com/
+  - WCAG Checker https://validator.w3.org/nu/ [PASSED]
+  - Accessibility checker https://wave.webaim.org/ [NO ERRORS]
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" 
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin="">
+  <title>DETAILS | STAYSPACE</title>
+</head>
+
+<body>
+  <!-- SITEWIDE HEADER/NAV -->
+  <a class="skip-link" href="#main">Skip to Main Content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="site-nav" aria-label="Primary navigation">
+          <a class="branding" href="index.html">
+            <img class="branding-logo" src="img/icons/logo.svg" alt="StaySpace Logo">
+          </a>
+
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="details.html">Details</a></li>
+            <li><a href="contact.html">Book</a></li>
+          </ul>
+
+          <a class="airbnb" href="https://airbnb.com" target="_blank" rel="noopener noreferrer">
+            <img class="airbnb-logo" src="img/icons/Airbnb-Logo-2014-718276488.png" alt="Airbnb Logo">
+          </a>
+      </nav>
+    </div>
+  </header>
+  
+  <main id="main">
+    
+    <!-- PROPERTY TITLE AND LOCATION BANNER -->
+    <section class="property-header section">
+      <h1 class="screen-reader-only">TRANQUILITY BASE</h1>
+      <img class="hero-title" src="img/icons/TRANQUILITY-BASE.svg" alt="TRANQUILITY BASE">
+      <br>
+      <p class="location">Chester, United Kingdom</p>
+    </section>
+
+    <!-- DETAILED PROPERTY DESCRIPTIONS -->
+    <section class="property section">
+      <div class="overview-content container">
+        <h2 class="section-title">About The Property</h2>
+        <p>Our modern space-themed guest suite is located in the heart of historical Chester, designed with those looking for a space getaway in mind! As well as the high-tech simulation and gaming facilities on-site, the guesthouse is located in the city centre of Chester, close to local amenities and attractions, to provide all visitors with a complete getaway for all ages and occassions.</p>
+        <br>
+        <p>Our guesthouse is also located within a larger complex with an on-site bar, casino, a day-spa, and a small theatre that hosts two shows a day, four nights a week. Complete with food outlets, all your needs are catered for, and includes our rooftop taqueria!</p>
+      </div>
+    </section>
+
+    <!-- MAP AND NEARBY -->
+    <!-- Leaflet (n.d.). “Documentation - Leaflet -  a JavaScript library for interactive maps.” https://leafletjs.com/reference.html -->
+    <section class="location section">
+      <h2 class="section-title">Location</h2>
+      <div class="location-content">
+        <div id="map"></div>
+      </div>
+      <!-- <div class="location-desc">
+        <br>
+        <h3>Nearby</h3>
+        <ul>
+          <li>Chester Cathedral</li>
+          <li>Grosvenor Park Miniature Railway</li>
+          <li>Chester Racecourse</li>
+        </ul>
+      </div> -->
+    </section>
+    <br>
+    <!-- IMAGE GALLERY -->
+    <section class="gallery section">
+      <h2 class="screen-reader-only">Gallery</h2>
+      <h2 class="section-title">Nearby</h2>
+      <div class="gallery-grid">
+        <figure>
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdynamic-media-cdn.tripadvisor.com%2Fmedia%2Fphoto-o%2F16%2F8b%2F84%2F5d%2Fchester-cathedral.jpg%3Fw%3D1200%26h%3D1200%26s%3D1&f=1&nofb=1&ipt=d5e5c03982ad17e94d42bb3284f5dec0d59204f20f818b1a62ced3b873cffe4d" alt="Chester Cathedral">
+          <figcaption>Chester Cathedral</figcaption>
+        </figure>
+        <figure>
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia-cdn.tripadvisor.com%2Fmedia%2Fphoto-s%2F12%2F03%2Fc8%2F46%2Fa-few-photographs-of.jpg&f=1&nofb=1&ipt=622a0bfad338a7ee0a16809a64ed994994199e9095091b1f7e03179efc134ecc" alt="Grosvenor Park Miniature Railway">
+          <figcaption>Grosvenor Park Miniature Railway</figcaption>
+        </figure>
+        <figure>
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdynamic-media-cdn.tripadvisor.com%2Fmedia%2Fphoto-o%2F18%2F27%2Fe5%2Fbf%2Fclose-to-the-action-in.jpg%3Fw%3D1200%26h%3D1200%26s%3D1&f=1&nofb=1&ipt=685bb57da0c9fe17ce50a5d61fb3d95ed13e53b1c24ce4481cf6b9afc16e4239" alt="Chester Racecourse">
+          <figcaption>Chester Racecourse</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    
+
+    <!-- AVAILABLE ROOMS -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">A suite to suit all occasions!</h2>
+        <div class="rooms-grid">
+
+          <div class="room">
+            <h3>Party Suite</h3>
+            <p>Designed for lively stays, with all the available amenities, a minibar, and views out to Chester.</p>
+          </div>
+
+          <div class="room">
+            <h3>Family Suite</h3>
+            <p>Extra space and a cozy, child-friendly layout, with separate sleeping areas and extra amenities for the kids.</p>
+          </div>
+
+          <div class="room">
+            <h3>The Make-Believe Residency</h3>
+            <p>The star treatment! A boutique charm with flair, perfect for guests who want a room that feels like a scene from another world.</p>
+          </div>
+
+          <div class="room">
+            <h3>Honeymoon Suite</h3>
+            <p>Designed with space-faring couples in mind, this suit has extra romantic ambiance, a private balcony, and refined details that turn your stay into a small, intimate space retreat!</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- AMENITIES AND PROPERTY FEATURES -->
+    <!-- <section class="features section">
+      <h2 class="section-title">Features & Amenities</h2>
+      <div class="features-grid">
+        <div class="feature-cat">
+          <h3>Entertainment Rooms</h3>
+          <ul>
+            <li>Purpose-built VR room with Valve Index headsets</li>
+            <li>High-end gaming PC's complete with Radeon 9070XT GPUs</li>
+            <li>Immersive spacecraft simulators for both solo and group adventure</li>
+            <li>4K home theatre system with streaming service access</li>
+            <li>Extensive game library, regularly updated</li>
+          </ul>
+        </div>
+        <br>
+        <div class="feature-cat">
+          <h3>World Class Comfort</h3>
+          <ul>
+            <li>Premium bedding and high quality linens for a restful sleep</li>
+            <li>Carefully designed acoustics and soundproofing.</li>
+            <li>Smart lighting</li>
+            <li>Blackout curtains and ergonomic seating for the more immersive experiences</li>
+          </ul>
+        </div>
+        <br>
+        <div class="feature-cat">
+          <h3>Kitchen and Dining</h3>
+          <ul>
+            <li>Fully equipped kitchen with modern appliances and plenty of storage</li>
+            <li>Stylish dining area with comfortable seating for larger groups</li>
+            <li>Easy access to many local restaurants and bars.</li>
+          </ul>
+        </div>
+      </div>
+    </section> -->
+  </main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="scripts.js"></script>
+</body>
+</html>
